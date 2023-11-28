@@ -1,0 +1,9 @@
+#btn_start {
+    -fx-background-color: #4d4d4d;  /* Gris oscuro */
+    -fx-border-color: #ffffff;     /* Blanco */
+}
+
+#btn_start:hover {
+    -fx-background-color: #666666;  /* Gris más claro al pasar el mouse */
+    -fx-border-color: #ffffff;       /* Blanco */
+}
