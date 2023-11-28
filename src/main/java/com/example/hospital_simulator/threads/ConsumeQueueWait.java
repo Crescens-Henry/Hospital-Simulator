@@ -13,7 +13,6 @@ public class ConsumeQueueWait  extends Observable implements Runnable{
     @Override
     public void run() {
         while (true){
-            System.out.println("ESTOY AQUI");
             this.patientMonitor.extractPatientsWait();
             setChanged();
             notifyObservers("2");
