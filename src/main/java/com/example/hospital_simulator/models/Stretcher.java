@@ -6,7 +6,7 @@ public class Stretcher {
     private Patient patient;
     private StretcherState state;
 
-    public Stretcher(Patient patient) {
+    public Strecher(Patient patient) {
         this.patient = patient;
         this.state= StretcherState.EMPTY;
     }

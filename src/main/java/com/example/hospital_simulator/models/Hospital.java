@@ -6,18 +6,18 @@ import com.example.hospital_simulator.models.enums.StretcherState;
 import java.util.Arrays;
 
 public class Hospital {
-    private Stretcher[]stretchers;
+    private Strecher[]stretchers;
 
     public Hospital() {
-        this.stretchers = new Stretcher[20];
+        this.stretchers = new Strecher[20];
         for (int i = 0; i < this.stretchers.length; i++) {
-            this.stretchers[i] = new Stretcher(null);
+            this.stretchers[i] = new Strecher(null);
         }
     }
 
     public boolean isFull(){
         System.out.println(Arrays.toString(this.stretchers));
-        for (Stretcher stretcher : this.stretchers) {
+        for (Strecher stretcher : this.stretchers) {
             if (StretcherState.EMPTY.equals(stretcher.getState()))
                 return false;
         }
