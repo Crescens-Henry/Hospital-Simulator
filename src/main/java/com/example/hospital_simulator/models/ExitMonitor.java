@@ -25,7 +25,7 @@ public class ExitMonitor {
         }
         this.exit=this.exitQueue.getFirst();
         this.exit.setState(PatientState.EXIT);
-        hospital.removeDinnerByTableId(exit.getTableId());
+        hospital.removeDinnerByStretcherId(exit.getStretcherId());
         try {
             Thread.sleep(ThreadLocalRandom.current().nextInt(2000));
         } catch (InterruptedException e) {
@@ -42,11 +42,11 @@ public class ExitMonitor {
                 throw new RuntimeException(e);
             }
         }
-            Patient patientOrder = hospital.getDinnerByState(PatientState.UTIL_FINISH);
-            if(patientOrder !=null){
-                patientOrder.setState(PatientState.WAIT_ORDER);
-                this.exitQueue.add(patientOrder);
-            }
+        Patient patientOrder = hospital.getDinnerByState(PatientState.UTIL_FINISH);
+        if(patientOrder !=null){
+            patientOrder.setState(PatientState.WAIT_ORDER);
+            this.exitQueue.add(patientOrder);
+        }
         try {
             Thread.sleep(ThreadLocalRandom.current().nextInt(2000));
         } catch (InterruptedException e) {
