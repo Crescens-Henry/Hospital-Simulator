@@ -68,7 +68,7 @@ public class MainController implements Observer{
     private Rectangle receive_command;
 
     @FXML
-    private GridPane tables;
+    private GridPane stretchers;
 
     @FXML
     private Rectangle wait_command;
@@ -121,7 +121,7 @@ public class MainController implements Observer{
             case 2:
                 enterPatientToEntrace();
                 waitSecond(2);
-                sitPatientAtSomeTable();
+                sitPatientAtSomeStretcher();
                 makeOrder();
                 break;
             case 3:
@@ -135,7 +135,7 @@ public class MainController implements Observer{
 
     private void leavePatient(){
         Patient patient =exitMonitor.removeFromExitQueue();
-        StackPane stackPane= getTable(patient.getTableId());
+        StackPane stackPane= getStretcher(patient.getStretcherId());
         Rectangle rectangle=(Rectangle) stackPane.getChildren().get(0);
         Text text = (Text) stackPane.getChildren().get(1);
         Platform.runLater(()->{
@@ -160,7 +160,7 @@ public class MainController implements Observer{
         deliverCommand();
         waitSecond(1);
         Patient patient = doctorMonitor.getOrders().remove();
-        StackPane stackPane=getTable(patient.getTableId());
+        StackPane stackPane=getStretcher(patient.getStretcherId());
         Text text = (Text) stackPane.getChildren().get(1);
         Timeline timeline = new Timeline();
         EventHandler<ActionEvent> eventHandler = event -> {
@@ -228,8 +228,8 @@ public class MainController implements Observer{
             queue_wait.getChildren().remove(popPatient);
         });
     }
-    private void sitPatientAtSomeTable(){
-        for(Node hboxNode:tables.getChildren()){
+    private void sitPatientAtSomeStretcher(){
+        for(Node hboxNode:stretchers.getChildren()){
             HBox hbox=(HBox) hboxNode;
             Rectangle nurse = (Rectangle) hbox.getChildren().get(0);
             StackPane stackPane= (StackPane) hbox.getChildren().get(1);
@@ -279,8 +279,8 @@ public class MainController implements Observer{
         }
     }
 
-    private StackPane getTable(int id){
-        Node hboxNode=tables.getChildren().get(id);
+    private StackPane getStretcher(int id){
+        Node hboxNode=stretchers.getChildren().get(id);
         HBox hbox=(HBox) hboxNode;
         return  (StackPane) hbox.getChildren().get(1);
     }
