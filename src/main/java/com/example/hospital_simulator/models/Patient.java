@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 public class Patient {
     private PatientState state;
     private int id;
-    private  int tableId;
+    private  int stretcherId;
     private Color color;
     private int time;
 
@@ -14,7 +14,7 @@ public class Patient {
         this.time=0;
         this.color=GenerateColorRandom();
         this.state= PatientState.WAIT;
-        this.tableId=-1;
+        this.stretcherId=-1;
     }
 
     private Color GenerateColorRandom(){
@@ -44,12 +44,12 @@ public class Patient {
         this.time = time;
     }
 
-    public int getTableId() {
-        return tableId;
+    public int getStretcherId() {
+        return stretcherId;
     }
 
-    public void setTableId(int tableId) {
-        this.tableId = tableId;
+    public void setStretcherId(int stretcherId) {
+        this.stretcherId = stretcherId;
     }
 
     @Override
@@ -57,7 +57,7 @@ public class Patient {
         return "Patient{" +
                 "state=" + state +
                 ", id=" + id +
-                ", tableId=" + tableId +
+                ", stretcherId=" + stretcherId +
                 ", color=" + color +
                 ", time=" + time +
                 '}';
