@@ -68,7 +68,7 @@ public class MainController implements Observer{
     private Rectangle receive_command;
 
     @FXML
-    private GridPane tables;
+    private GridPane stretchers;
 
     @FXML
     private Rectangle wait_command;
@@ -229,7 +229,7 @@ public class MainController implements Observer{
         });
     }
     private void sitPatientAtSomeTable(){
-        for(Node hboxNode:tables.getChildren()){
+        for(Node hboxNode:stretchers.getChildren()){
             HBox hbox=(HBox) hboxNode;
             Rectangle nurse = (Rectangle) hbox.getChildren().get(0);
             StackPane stackPane= (StackPane) hbox.getChildren().get(1);
@@ -280,7 +280,7 @@ public class MainController implements Observer{
     }
 
     private StackPane getTable(int id){
-        Node hboxNode=tables.getChildren().get(id);
+        Node hboxNode=stretchers.getChildren().get(id);
         HBox hbox=(HBox) hboxNode;
         return  (StackPane) hbox.getChildren().get(1);
     }
