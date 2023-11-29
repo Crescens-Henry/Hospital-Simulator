@@ -1,14 +1,14 @@
 package com.example.hospital_simulator.models;
 
-import com.example.hospital_simulator.models.enums.TableState;
+import com.example.hospital_simulator.models.enums.StretcherState;
 
-public class Table {
+public class Stretcher {
     private Patient patient;
-    private TableState state;
+    private StretcherState state;
 
-    public Table(Patient patient) {
+    public Stretcher(Patient patient) {
         this.patient = patient;
-        this.state=TableState.EMPTY;
+        this.state= StretcherState.EMPTY;
     }
 
     public Patient getPatient() {
@@ -19,17 +19,17 @@ public class Table {
         this.patient = patient;
     }
 
-    public TableState getState() {
+    public StretcherState getState() {
         return state;
     }
 
-    public void setState(TableState state) {
+    public void setState(StretcherState state) {
         this.state = state;
     }
 
     @Override
     public String toString() {
-        return "Table{" +
+        return "Stretcher{" +
                 "patient=" + patient +
                 ", state=" + state +
                 '}';

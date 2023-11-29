@@ -1,6 +1,6 @@
 package com.example.hospital_simulator.models.enums;
 
-public enum TableState {
+public enum StretcherState {
     EMPTY,
     BUSY,
 }
